@@ -34,6 +34,9 @@ node_modules
 target/*
 !target/.gitkeep
 
+# distribution folder
+dist
+
 # IDE files
 .idea
 *.iml
