@@ -1,7 +1,6 @@
 const emptyObject = {};
 /**
  * An event listener that combines two successive onChange and onChangeModel events and then calls a handler
- *
  */
 class ChangeEventAccumulator {
   constructor() {

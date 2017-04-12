@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Container, Header, Segment, Icon, Menu, Loader } from 'semantic-ui-react';
-import ChildApp from '../Core/ChildApp';
+import { ChildApp } from 'deskproapps-sdk-core';
 
 import * as UICommand from '../UICommand';
 

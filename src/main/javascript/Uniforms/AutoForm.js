@@ -1,7 +1,7 @@
 import React from 'react';
 
 import createSchemaBridge from 'uniforms/createSchemaBridge';
-import { default as UniformsForm } from 'uniforms-semantic/AutoForm';
+import { AutoForm as UniformsForm } from 'uniforms-semantic';
 
 import { Button } from 'semantic-ui-react';
 import FormChildContextTypes from './FormChildContextTypes';

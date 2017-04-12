@@ -3,12 +3,6 @@
   "plugins": [
     "transform-runtime",
     "transform-class-properties",
-    ["react-transform", {
-      "transforms": [{
-        "transform" : "react-transform-hmr",
-        "imports"   : ["react"],
-        "locals"    : ["module"]
-      }]
-    }]
+    "transform-object-assign"
   ]
 }
