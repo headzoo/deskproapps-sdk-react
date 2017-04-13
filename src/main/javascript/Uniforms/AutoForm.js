@@ -3,7 +3,7 @@ import React from 'react';
 import { createSchemaBridge } from 'uniforms';
 import { AutoForm as UniformsForm } from 'uniforms-semantic';
 
-import { Button } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react/src';
 import FormChildContextTypes from './FormChildContextTypes';
 
 class AutoForm extends UniformsForm {

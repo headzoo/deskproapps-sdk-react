@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Header, Button, Container, Divider } from 'semantic-ui-react';
+import { Header, Button, Container, Divider } from 'semantic-ui-react/src';
 
 const Block = ({ label, children, ...other }) => {
 

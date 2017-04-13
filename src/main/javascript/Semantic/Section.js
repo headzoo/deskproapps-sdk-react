@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Header, Divider, Segment } from 'semantic-ui-react';
+import { Header, Divider, Segment } from 'semantic-ui-react/src';
 
 const Section = ({ children, title, ...other }) => {
 

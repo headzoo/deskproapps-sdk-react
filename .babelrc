@@ -1,15 +1,11 @@
 {
   "presets": ["es2015", "react", "stage-0"],
   "plugins": [
+    ["transform-rename-import", { "original": "semantic-ui-react/src", "replacement": "semantic-ui-react/dist/commonjs" }],
     "transform-class-properties",
     "transform-object-assign",
     "transform-react-inline-elements",
-    [
-      "transform-react-remove-prop-types",
-      {
-        "mode": "wrap"
-      }
-    ],
+    [ "transform-react-remove-prop-types" ],
     [
       "transform-runtime",
       {
