@@ -2,7 +2,7 @@
   "name": "deskproapps-sdk-react",
   "version": "0.1.0",
   "description": "react component of deskpro apps sdk",
-  "main": "dist/index.js",
+  "main": "lib/main/javascript/index.js",
   "scripts": {
     "make-lib": "rm -rf lib/* && node_modules/.bin/babel src/main/javascript -d lib/main/javascript",
     "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config.dist.js'; rm -rf dist/* && DPA_PACKAGE_MODE=slim ${WEBPACK} && ${WEBPACK}",
@@ -28,7 +28,8 @@
     "LICENSE",
     "react.js",
     "dist/",
-    "lib/"
+    "lib/",
+    "src/"
   ],
   "devDependencies": {
     "dpat": "file:../dpat",
@@ -39,5 +40,10 @@
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
     "uniforms-semantic": "1.17.1"
+  },
+  "peerDependencies": {
+    "react": "15.x",
+    "react-dom": "15.x",
+    "semantic-ui-react": "0.67.2"
   }
 }

@@ -1,4 +1,4 @@
-import { default as BaseSimpleSchema2Bridge } from 'uniforms/SimpleSchema2Bridge';
+import { SimpleSchema2Bridge as BaseSimpleSchema2Bridge } from 'uniforms';
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['deskpro']);
 

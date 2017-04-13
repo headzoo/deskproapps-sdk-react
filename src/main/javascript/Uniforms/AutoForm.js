@@ -1,6 +1,6 @@
 import React from 'react';
 
-import createSchemaBridge from 'uniforms/createSchemaBridge';
+import { createSchemaBridge } from 'uniforms';
 import { AutoForm as UniformsForm } from 'uniforms-semantic';
 
 import { Button } from 'semantic-ui-react';

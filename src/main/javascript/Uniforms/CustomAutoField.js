@@ -1,5 +1,5 @@
 import React from 'react';
-import connectField from 'uniforms/connectField';
+import { connectField } from 'uniforms';
 
 import DateField from '../ReactForms/DateField';
 import RadioField from '../ReactForms/RadioField';

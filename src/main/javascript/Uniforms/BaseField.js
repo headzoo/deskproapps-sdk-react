@@ -1,5 +1,5 @@
 import React from 'react';
-import { default as UniformsBaseField } from 'uniforms/BaseField';
+import { BaseField as UniformsBaseField } from 'uniforms';
 
 import FormChildContextTypes from './FormChildContextTypes';
 

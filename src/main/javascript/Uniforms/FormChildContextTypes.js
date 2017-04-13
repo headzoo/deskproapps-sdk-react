@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'react';
-import BaseForm from 'uniforms/BaseForm';
+import { BaseForm } from 'uniforms';
 
 export default {
   ...BaseForm.childContextTypes,
