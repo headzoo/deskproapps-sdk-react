@@ -21,12 +21,11 @@
   "author": "Deskpro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DeskproApps/sdk-core/issues"
+    "url": "https://github.com/DeskproApps/deskproapps-sdk-react/issues"
   },
-  "homepage": "https://github.com/DeskproApps/sdk-core#readme",
+  "homepage": "https://github.com/DeskproApps/deskproapps-sdk-react#readme",
   "files": [
     "LICENSE",
-    "react.js",
     "dist/",
     "lib/",
     "src/"
