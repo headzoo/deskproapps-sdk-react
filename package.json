@@ -5,7 +5,7 @@
   "main": "lib/main/javascript/index.js",
   "scripts": {
     "make-lib": "rm -rf lib/* && node_modules/.bin/babel src/main/javascript -d lib/main/javascript",
-    "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config.dist.js'; rm -rf dist/* && DPA_PACKAGE_MODE=slim ${WEBPACK} && ${WEBPACK}",
+    "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && DPA_PACKAGE_MODE=slim ${WEBPACK} && ${WEBPACK}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,7 +36,10 @@
     "lodash": "4.17.4",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-    "semantic-ui-react": "0.67.2",
+    "semantic-ui-react": "0.67.2"
+  },
+  "dependencies": {
+    "deskproapps-sdk-core": "file:../deskproapps-sdk-core",
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
     "uniforms-semantic": "1.17.1"
