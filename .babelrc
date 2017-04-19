@@ -1,7 +1,10 @@
 {
   "presets": ["es2015", "react", "stage-0"],
   "plugins": [
-    ["transform-rename-import", { "original": "semantic-ui-react/src", "replacement": "semantic-ui-react/dist/commonjs" }],
+    ["import-rename", {
+      "^semantic-ui-react/src$": "semantic-ui-react/dist/commonjs",
+      "^deskproapps-sdk-core$": "deskproapps-sdk-core/dist/deskproapps-sdk-core"
+    }],
     "transform-class-properties",
     "transform-object-assign",
     "transform-react-inline-elements",

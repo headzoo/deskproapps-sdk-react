@@ -5,7 +5,7 @@
   "main": "lib/main/javascript/index.js",
   "scripts": {
     "make-lib": "rm -rf lib/* && node_modules/.bin/babel src/main/javascript -d lib/main/javascript",
-    "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && DPA_PACKAGE_MODE=slim ${WEBPACK} && ${WEBPACK}",
+    "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && ${WEBPACK}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
