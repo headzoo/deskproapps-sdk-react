@@ -31,7 +31,7 @@ configParts.push({
             { test: /\.(html?|css)$/, loader: 'raw-loader' }
         ],
         noParse: [
-            path.resolve(PROJECT_ROOT_PATH, 'node_modules/deskproapps-sdk-core/dist'),
+            path.resolve(PROJECT_ROOT_PATH, 'node_modules/@deskproapps/deskproapps-sdk-core/dist'),
             path.resolve(PROJECT_ROOT_PATH, 'node_modules/handlebars'),
             path.resolve(PROJECT_ROOT_PATH, 'semantic-ui-react/dist')
         ]
@@ -46,7 +46,7 @@ configParts.push({
             //'handlebars': 'handlebars/runtime.js',
             'handlebars': 'handlebars/dist/handlebars.js',
             'semantic-ui-react/src': 'semantic-ui-react/dist/commonjs',
-            'deskproapps-sdk-core': 'deskproapps-sdk-core/dist/deskproapps-sdk-core'
+            '@deskproapps/deskproapps-sdk-core': '@deskproapps/deskproapps-sdk-core/dist/deskproapps-sdk-core'
         },
 
         extensions: ['*', '.js', '.jsx', '.scss', '.css']
@@ -60,7 +60,7 @@ if (SLIM_PACKAGE) {
     configParts.push({
         entry: {
             slim: [ path.resolve(PROJECT_ROOT_PATH, 'src/main/javascript/index.js') ],
-            vendor: [ 'lodash', 'semantic-ui-react', 'simpl-schema', 'uniforms', 'deskproapps-sdk-core' ],
+            vendor: [ 'lodash', 'semantic-ui-react', 'simpl-schema', 'uniforms', '@deskproapps/deskproapps-sdk-core' ],
         },
         output: {
             pathinfo: !PRODUCTION,

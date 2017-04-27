@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AbstractApp from './AbstractApp';
-import { connect as dpConnect } from 'deskproapps-sdk-core';
+import { connect as dpConnect } from '@deskproapps/deskproapps-sdk-core';
 
 
 const instance = (UserApp) => {

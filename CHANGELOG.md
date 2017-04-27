@@ -1,3 +1,7 @@
+## Upcoming
+
+* Update dependencies
+
 ## v0.1.1 - 2017-04-27
 
 * Re-publish as organization scoped package
