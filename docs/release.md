@@ -33,6 +33,5 @@ The arguments available to the prepare-release command are:
 ### Publish step
   
 The release step executes the following sequence of actions:
-  
-* Sort the list of version tags (those starting with v) and pick the latest version.  
-* Run `npm publish --access public`  
+    
+* Run `npm run make-lib && npm run make-dist && npm publish --access public`  
