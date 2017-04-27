@@ -1,6 +1,6 @@
 {
   "name": "deskproapps-sdk-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "react component of deskpro apps sdk",
   "main": "lib/main/javascript/index.js",
   "scripts": {
