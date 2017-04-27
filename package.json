@@ -1,7 +1,7 @@
 {
   "name": "deskproapps-sdk-react",
   "version": "0.1.0",
-  "description": "react component of deskpro apps sdk",
+  "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
   "main": "lib/main/javascript/index.js",
   "scripts": {
     "make-lib": "rm -rf lib/* && node_modules/.bin/babel src/main/javascript -d lib/main/javascript",
@@ -15,12 +15,12 @@
   },
   "keywords": [
     "deskpro",
-    "apps",
-    "deskpro",
-    "sdk"
+    "deskpro apps",
+    "deskpro sdk",
+    "deskpro react"
   ],
-  "author": "Deskpro",
-  "license": "MIT",
+  "author": "DeskPRO Ltd.",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/DeskproApps/deskproapps-sdk-react/issues"
   },
@@ -32,14 +32,14 @@
     "lib/"
   ],
   "devDependencies": {
-    "dpat": "file:../dpat",
+    "@deskproapps/dpat": "0.2.1",
     "lodash": "4.17.4",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "semantic-ui-react": "0.67.2"
   },
   "dependencies": {
-    "deskproapps-sdk-core": "file:../deskproapps-sdk-core",
+    "@deskproapps/deskproapps-sdk-core": "0.1.0",
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
     "uniforms-semantic": "1.17.1"

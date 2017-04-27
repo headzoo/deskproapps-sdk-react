@@ -1,6 +1,6 @@
 # deskproapps-sdk-react
 
-A react-based javascript SDK for building Deskpro Apps based on React.Js
+A react-based javascript SDK for building Deskpro Apps powered by the React library
 
 ## Documentation
 
