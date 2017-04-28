@@ -1,4 +1,4 @@
-## Upcoming
+## v0.1.4 - 2017-04-28
 
 * [MAINTENANCE] Update dependencies
 
