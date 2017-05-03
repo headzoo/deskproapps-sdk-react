@@ -1,4 +1,4 @@
-## Upcoming
+## v0.1.6 - 2017-05-03
 
 * [FEATURE] add Button, Search UI component
 * [FIX] content box showing when in app in collapsed state
