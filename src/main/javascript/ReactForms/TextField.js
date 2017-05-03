@@ -7,12 +7,10 @@ import React  from 'react';
  * @constructor
  */
 const TextField = ({ formBridge, ...allprops }) => {
-  const Component = formBridge.getTextareaFieldComponent();
+  const Component = formBridge.getTextFieldComponent();
   const props = formBridge.getFieldProps(allprops);
 
-  return (
-    <Component {...props} />
-  );
+  return ( <Component {...props} /> );
 };
 
 TextField.propTypes = {

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Container, Header, Segment, Icon, Menu, Loader } from 'semantic-ui-react/src';
+import { Container, Header, Segment, Icon, Menu, Loader, Image } from 'semantic-ui-react/src';
 import { ChildApp } from '@deskproapps/deskproapps-sdk-core';
 
 import * as UICommand from '../UICommand';
@@ -93,15 +93,15 @@ class AbstractApp extends React.Component {
     if (layout === 'collapsed') {
       return (
         <Menu.Menu position="right" >
-          <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse}>
-            <Icon name="caret up" />
+          <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"dp-greyscale-850"}>
+            <Icon name="caret up" size="large"/>
           </Menu.Item>
         </Menu.Menu>
       );
     }
 
     return (
-      <Menu.Menu position="right" >
+      <Menu.Menu position="right">
         <Menu.Item name="refresh" active={false} fitted onClick={this.childapp.onRefresh}>
           <Icon name="refresh" />
         </Menu.Item>
@@ -110,7 +110,7 @@ class AbstractApp extends React.Component {
           <Icon name="setting" />
         </Menu.Item>
 
-        <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse}>
+        <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"big dp-greyscale-850"}>
           <Icon name="caret up" />
         </Menu.Item>
       </Menu.Menu>
@@ -120,8 +120,10 @@ class AbstractApp extends React.Component {
   renderAppHeader = (name) => {
     return (
       <Menu.Item>
-        <Header size="small">
-          <Icon name="cubes" />
+        <Header size="tiny">
+          <div className={"ui icon deskpro-app-icon"}>
+            <Image src="../assets/icon.png" />
+          </div>
           <Header.Content> {name} </Header.Content>
         </Header>
       </Menu.Item>
@@ -131,17 +133,14 @@ class AbstractApp extends React.Component {
   renderAppContent = (Content, dpapp, props) => {
 
     const { layout, loader } = this.state;
-    let conteStyle;
+    const invisibleStyle = { visibility: 'hidden', display: 'none' };
     const ui = UICommand.commandChain(this.onUICommand);
 
-    if (layout === 'collapsed' || loader.visible) {
-      conteStyle = { visibility: 'hidden' };
-    }
-
+    const contentStyle = loader.visible || layout === 'collapsed'  ? invisibleStyle : {};
     return (
-      <Segment attached="bottom">
+      <Segment attached="bottom" style={contentStyle}>
         <Loader active={loader.visible} inline="centered" />
-        <div style={conteStyle}>
+        <div style={contentStyle}>
           <Content dpapp={dpapp} ui={ui} {...props} />
         </div>
       </Segment>
@@ -154,7 +153,7 @@ class AbstractApp extends React.Component {
     return (
       <Container>
 
-        <Menu size="huge" borderless attached="top">
+        <Menu borderless attached="top" className={"deskpro-app-menu"}>
           { this.renderAppHeader(name) }
           { this.renderOptions() }
         </Menu>

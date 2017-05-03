@@ -18,7 +18,8 @@ export const Form = {
 
 export const Layout = {
     Block : Semantic.Block,
-    Section: Semantic.Section
+    Section: Semantic.Section,
+    Button: Semantic.Button
 };
 
 export const UICommand = {

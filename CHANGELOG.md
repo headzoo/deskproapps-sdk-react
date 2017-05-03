@@ -1,3 +1,10 @@
+## Upcoming
+
+* [FEATURE] add Button, Search UI component
+* [FIX] content box showing when in app in collapsed state
+* [FIX] Text field incorrectly rendered as TextArea field
+* [FIX] Form fields loosing focus due excessive parent form rendering
+
 ## v0.1.5 - 2017-05-02
 
 * [MAINTENANCE] Update dependencies

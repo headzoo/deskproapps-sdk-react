@@ -99,7 +99,7 @@ class UniformsFormBridge extends FormBridge {
    */
   getPassthroughFormProps = (props) => {
     // noinspection Eslint
-    const { onChangeModel, onChange, model, autoField, schema, formBridge, ...allowed } = props;
+    const { fields, onChangeModel, onChange, model, autoField, schema, formBridge, ...allowed } = props;
     return allowed;
   };
 

@@ -8,7 +8,7 @@ const Section = ({ children, title, ...other }) => {
   };
 
   return (
-    <Segment vertical style={style} className="form">
+    <Segment vertical style={style} className="form deskpro-layout-section">
       <Header dividing size="tiny">{title}</Header>
       { children }
     </Segment>
