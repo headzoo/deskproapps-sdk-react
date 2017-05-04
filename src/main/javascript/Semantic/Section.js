@@ -6,10 +6,17 @@ const Section = ({ children, title, ...other }) => {
   const style = {
     borderColor: 'white'
   };
+  if (title) {
+    return (
+      <Segment vertical style={style} className="form deskpro-layout-section">
+        <Header dividing size="tiny">{title}</Header>
+        { children }
+      </Segment>
+    );
+  }
 
   return (
     <Segment vertical style={style} className="form deskpro-layout-section">
-      <Header dividing size="tiny">{title}</Header>
       { children }
     </Segment>
   );

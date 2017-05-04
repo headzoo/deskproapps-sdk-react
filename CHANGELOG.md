@@ -1,3 +1,8 @@
+## Upcoming
+
+* [FEATURE] Submit and cancel buttons displayed only when handlers are present
+* [FIX] Section display empty header when no title given 
+
 ## v0.1.6 - 2017-05-03
 
 * [FEATURE] add Button, Search UI component

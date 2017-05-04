@@ -42,11 +42,10 @@ class AutoForm extends UniformsForm {
   }
 
   render() {
-    const { onCancel } = this.props;
+    const { onCancel, onSubmit } = this.props;
 
     const AutoField = this.props.autoField || this.getAutoField();
     const ErrorsField = this.props.errorsField || this.getErrorsField();
-    const SubmitField = this.props.getSubmitFieldComponent || this.getSubmitField();
 
     const { children, ...otherProps } = this.getNativeFormProps();
 
@@ -55,10 +54,7 @@ class AutoForm extends UniformsForm {
         <form {...otherProps}>
           {children}
           <ErrorsField />
-          <div>
-            <SubmitField className="primary" />
-            <Button onClick={onCancel}>Cancel</Button>
-          </div>
+          { this.renderButtons() }
         </form>
       );
     }
@@ -70,14 +66,41 @@ class AutoForm extends UniformsForm {
         )}
 
         <ErrorsField />
-        <div>
-          <SubmitField className="primary" />
-          <Button onClick={onCancel}>Cancel</Button>
-        </div>
+        { this.renderButtons() }
 
       </form>
     );
   }
+
+  renderButtons = () => {
+    const { onCancel, onSubmit } = this.props;
+    const SubmitField = this.props.getSubmitFieldComponent || this.getSubmitField();
+
+    if (onCancel && onSubmit) {
+      return (
+        <div>
+          <SubmitField className="primary" />
+          <Button onClick={onCancel}>Cancel</Button>
+        </div>
+      );
+    }
+
+    if (onCancel) {
+      return (
+        <div>
+          <Button basic onClick={onCancel}>Cancel</Button>
+        </div>
+      );
+    }
+
+    if (onSubmit) {
+      return (
+        <div>
+          <SubmitField className="primary" />
+        </div>
+      );
+    }
+  };
 
   getNativeFormProps() {
     const props = super.getNativeFormProps();
