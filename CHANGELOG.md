@@ -1,4 +1,4 @@
-## Upcoming
+## v0.1.7 - 2017-05-04
 
 * [FEATURE] Submit and cancel buttons displayed only when handlers are present
 * [FIX] Section display empty header when no title given 
