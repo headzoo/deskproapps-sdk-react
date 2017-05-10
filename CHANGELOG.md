@@ -1,4 +1,4 @@
-## Upcoming
+## v0.2.0 - 2017-05-10
 * [FEATURE] add possibility to change the label of the submit button 
 * [FIX] remove hardcoded application name, which is now received as a parameter 
 * [FIX] various css changes 
