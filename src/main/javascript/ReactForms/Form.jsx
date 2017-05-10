@@ -23,15 +23,14 @@ const injectFormBridge = (children, formBridge) => React.Children.map(children, 
   return React.cloneElement(child, { formBridge }, injectedChildren);
 });
 
-const emptyFunction = () => {};
-
-const Form = ({ fields, model, children, onChange, ...passthrough }) => {
+const Form = ({ fields, model, children, onChange, onCancel, onSubmit, ...passthrough }) => {
   const uniformsBridge = new UniformsFormBridge();
 
   const AutoForm = uniformsBridge.getFormComponent();
-  const bridgeProps = uniformsBridge.getFormProps({ fields, model, onChange, ...passthrough });
+  const bridgeProps = uniformsBridge.getFormProps({ fields, model, onChange, onCancel, onSubmit, ...passthrough });
 
   const injectedChildren = injectFormBridge(children, uniformsBridge);
+
   return (
     <AutoForm {...bridgeProps} > {injectedChildren} </AutoForm>
   );
@@ -40,13 +39,19 @@ const Form = ({ fields, model, children, onChange, ...passthrough }) => {
 Form.propTypes = {
   fields: React.PropTypes.object,
   model: React.PropTypes.object,
+  submitLabel: React.PropTypes.string,
   onChange: React.PropTypes.func,
+  onCancel: React.PropTypes.func,
+  onSubmit: React.PropTypes.func,
 };
 
 Form.defaultProps = {
-  onChange: emptyFunction,
+  onChange: UniformsFormBridge.emptyFunction,
+  onCancel: UniformsFormBridge.emptyFunction,
+  onSubmit: UniformsFormBridge.emptyFunction,
   model: {},
   fields: [],
+  submitLabel: 'Submit'
 };
 
 

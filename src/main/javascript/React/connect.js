@@ -11,16 +11,16 @@ const instance = (UserApp) => {
   };
 };
 
-const render = (DeskproApp, domselector) => {
+const render = (DeskproApp, name, domselector) => {
     return dpConnect().then((dpapp) => {
-        ReactDOM.render(<DeskproApp dpapp={dpapp} name="TRELLO" />, document.querySelector(domselector));
+        ReactDOM.render(<DeskproApp dpapp={dpapp} name={name} />, document.querySelector(domselector));
         return true;
     });
 };
 
-const connect = (app) => {
+const connect = (app, appName) => {
     const newApp = instance(app);
-    return { render: domselector => render(newApp, domselector) };
+    return { render: domselector => render(newApp, appName, domselector) };
 };
 
 export default connect;

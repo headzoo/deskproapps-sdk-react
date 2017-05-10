@@ -1,4 +1,13 @@
+const emptyFunction = () => {};
+
 class FormBridge {
+
+  /**
+   * @return {function()}
+   */
+  static get emptyFunction() {
+    return emptyFunction;
+  }
 
   getFormFieldsComponent = () => {
     throw new Error('Must be implemented in a subclass');

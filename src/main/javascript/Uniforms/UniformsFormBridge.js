@@ -144,7 +144,7 @@ class UniformsFormBridge extends FormBridge {
 
   getFormFieldsComponent = () => AutoFields;
 
-  getFormFieldsProps = ({ fields }) => ({ fields, autoField: CustomAutoField });
+  getFormFieldsProps = ({ fields }) => ({ fields, autoField: CustomAutoField, className: "field" }); // TODO add classname instead of overwrite
 
   getRadioFieldComponent = () => bridgeField(this, RadioField);
 

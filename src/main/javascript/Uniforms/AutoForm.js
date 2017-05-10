@@ -2,9 +2,11 @@ import React from 'react';
 
 import { createSchemaBridge } from 'uniforms';
 import { AutoForm as UniformsForm } from 'uniforms-semantic';
-
 import { Button } from 'semantic-ui-react/src';
+
 import FormChildContextTypes from './FormChildContextTypes';
+import UniformsFormBridge from './UniformsFormBridge';
+
 
 class AutoForm extends UniformsForm {
 
@@ -73,19 +75,22 @@ class AutoForm extends UniformsForm {
   }
 
   renderButtons = () => {
-    const { onCancel, onSubmit } = this.props;
+    const { onCancel, onSubmit, submitLabel } = this.props;
     const SubmitField = this.props.getSubmitFieldComponent || this.getSubmitField();
 
-    if (onCancel && onSubmit) {
+    const showOnCancel = onCancel && onCancel !== UniformsFormBridge.emptyFunction;
+    const showOnSubmit = onSubmit && onSubmit !== UniformsFormBridge.emptyFunction;
+
+    if (showOnCancel && showOnSubmit) {
       return (
         <div>
-          <SubmitField className="primary" />
-          <Button onClick={onCancel}>Cancel</Button>
+          <SubmitField className="primary" value={submitLabel} />
+          <Button basic onClick={onCancel}>Cancel</Button>
         </div>
       );
     }
 
-    if (onCancel) {
+    if (showOnCancel) {
       return (
         <div>
           <Button basic onClick={onCancel}>Cancel</Button>
@@ -93,10 +98,10 @@ class AutoForm extends UniformsForm {
       );
     }
 
-    if (onSubmit) {
+    if (showOnSubmit) {
       return (
         <div>
-          <SubmitField className="primary" />
+          <SubmitField className="primary" value={submitLabel} />
         </div>
       );
     }
@@ -104,7 +109,7 @@ class AutoForm extends UniformsForm {
 
   getNativeFormProps() {
     const props = super.getNativeFormProps();
-    const { onCancel, formBridge, ...otherProps } = props;
+    const { onCancel, formBridge, submitLabel, ...otherProps } = props;
 
     return otherProps;
   }

@@ -8,15 +8,15 @@ const Section = ({ children, title, ...other }) => {
   };
   if (title) {
     return (
-      <Segment vertical style={style} className="form deskpro-layout-section">
-        <Header dividing size="tiny">{title}</Header>
+      <Segment vertical style={style} className="form">
+        <Header dividing>{title}</Header>
         { children }
       </Segment>
     );
   }
 
   return (
-    <Segment vertical style={style} className="form deskpro-layout-section">
+    <Segment vertical style={style} className="form">
       { children }
     </Segment>
   );

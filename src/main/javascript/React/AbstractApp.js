@@ -93,7 +93,7 @@ class AbstractApp extends React.Component {
     if (layout === 'collapsed') {
       return (
         <Menu.Menu position="right" >
-          <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"dp-greyscale-850"}>
+          <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"app-option"}>
             <Icon name="caret up" size="large"/>
           </Menu.Item>
         </Menu.Menu>
@@ -102,15 +102,15 @@ class AbstractApp extends React.Component {
 
     return (
       <Menu.Menu position="right">
-        <Menu.Item name="refresh" active={false} fitted onClick={this.childapp.onRefresh}>
+        <Menu.Item name="refresh" active={false} fitted onClick={this.childapp.onRefresh} className={"app-option"}>
           <Icon name="refresh" />
         </Menu.Item>
 
-        <Menu.Item name="settings" active={false} fitted onClick={this.childapp.onSettings}>
+        <Menu.Item name="settings" active={false} fitted onClick={this.childapp.onSettings} className={"app-option"}>
           <Icon name="setting" />
         </Menu.Item>
 
-        <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"big dp-greyscale-850"}>
+        <Menu.Item name="collapse" active={false} fitted onClick={this.onCollapse} className={"app-option big"}>
           <Icon name="caret up" />
         </Menu.Item>
       </Menu.Menu>
@@ -119,12 +119,12 @@ class AbstractApp extends React.Component {
 
   renderAppHeader = (name) => {
     return (
-      <Menu.Item>
+      <Menu.Item className={"app-header"}>
         <Header size="tiny">
           <div className={"ui icon deskpro-app-icon"}>
             <Image src="../assets/icon.png" />
           </div>
-          <Header.Content> {name} </Header.Content>
+          <Header.Content> {name.toUpperCase()} </Header.Content>
         </Header>
       </Menu.Item>
     );
@@ -138,7 +138,7 @@ class AbstractApp extends React.Component {
 
     const contentStyle = loader.visible || layout === 'collapsed'  ? invisibleStyle : {};
     return (
-      <Segment attached="bottom" style={contentStyle}>
+      <Segment attached="bottom" style={contentStyle} className={"app-body"}>
         <Loader active={loader.visible} inline="centered" />
         <div style={contentStyle}>
           <Content dpapp={dpapp} ui={ui} {...props} />
@@ -153,7 +153,7 @@ class AbstractApp extends React.Component {
     return (
       <Container>
 
-        <Menu borderless attached="top" className={"deskpro-app-menu"}>
+        <Menu borderless attached="top" className={"app-menu"}>
           { this.renderAppHeader(name) }
           { this.renderOptions() }
         </Menu>
