@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@deskproapps/deskproapps-sdk-core": "0.2.1",
+    "graphql": "^0.9.6",
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
     "uniforms-semantic": "1.17.1"
