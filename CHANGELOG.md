@@ -1,6 +1,6 @@
 ## Upcoming
 
-* [CHANGES] change the way an app is initialized, which becomes mainly the responsibility of a boilerplate
+* [CHANGE] change the way an app is initialized, which becomes mainly the responsibility of an application project
 
 
 ## v0.2.0 - 2017-05-10
