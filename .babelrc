@@ -1,16 +1,20 @@
 {
-  "presets": ["es2015", "react", "stage-0"],
+  "presets": [
+    "@deskproapps/dpat/node_modules/babel-preset-es2015",
+    "@deskproapps/dpat/node_modules/babel-preset-react",
+    "@deskproapps/dpat/node_modules/babel-preset-stage-0"
+  ],
   "plugins": [
-    ["import-rename", {
+    ["@deskproapps/dpat/node_modules/babel-plugin-import-rename", {
       "^semantic-ui-react/src$": "semantic-ui-react/dist/commonjs",
       "^deskproapps-sdk-core$": "deskproapps-sdk-core/dist/deskproapps-sdk-core"
     }],
-    "transform-class-properties",
-    "transform-object-assign",
-    "transform-react-inline-elements",
-    [ "transform-react-remove-prop-types" ],
+    "@deskproapps/dpat/node_modules/babel-plugin-transform-class-properties",
+    "@deskproapps/dpat/node_modules/babel-plugin-transform-object-assign",
+    "@deskproapps/dpat/node_modules/babel-plugin-transform-react-inline-elements",
+    [ "@deskproapps/dpat/node_modules/babel-plugin-transform-react-remove-prop-types" ],
     [
-      "transform-runtime",
+      "@deskproapps/dpat/node_modules/babel-plugin-transform-runtime",
       {
         "polyfill": false,
         "regenerator": false

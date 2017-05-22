@@ -1,6 +1,7 @@
 ## Upcoming
 
 * [CHANGE] change the way an app is initialized, which becomes mainly the responsibility of an application project
+* [CHANGE] stop requiring dpat as a dev dependency, instead relying on the globally installed version
 
 
 ## v0.2.0 - 2017-05-10

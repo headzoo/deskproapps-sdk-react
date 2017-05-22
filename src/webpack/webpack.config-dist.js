@@ -1,10 +1,10 @@
 const path = require('path');
-const webpack = require('webpack');
+const dpatRootPath = require.resolve('@deskproapps/dpat').split('dpat').shift().concat('dpat');
 
-const ManifestPlugin = require('webpack-manifest-plugin');
-
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
-const WebpackChunkHash = require('webpack-chunk-hash');
+const webpack = require('@deskproapps/dpat/node_modules/webpack');
+const ManifestPlugin = require('@deskproapps/dpat/node_modules//webpack-manifest-plugin');
+const ChunkManifestPlugin = require('@deskproapps/dpat/node_modules/chunk-manifest-webpack-plugin');
+const WebpackChunkHash = require('@deskproapps/dpat/node_modules/webpack-chunk-hash');
 
 const BuildUtils = require('./BuildUtils');
 
@@ -50,6 +50,9 @@ configParts.push({
         },
 
         extensions: ['*', '.js', '.jsx', '.scss', '.css']
+    },
+    resolveLoader: {
+      modules: [ path.join(dpatRootPath, "node_modules") ],
     },
     // stats: 'minimal',
     node: { fs: 'empty' },

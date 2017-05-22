@@ -4,8 +4,8 @@
   "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
   "main": "lib/main/javascript/index.js",
   "scripts": {
-    "make-lib": "rm -rf lib/* && node_modules/.bin/babel src/main/javascript -d lib/main/javascript",
-    "make-dist": "WEBPACK='node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && ${WEBPACK}",
+    "make-lib": "NPM_ROOT=$(npm root -g); BABEL=$NPM_ROOT'/@deskproapps/dpat/node_modules/.bin/babel'; rm -rf lib/* && ${BABEL} src/main/javascript -d lib/main/javascript",
+    "make-dist": "NPM_ROOT=$(npm root -g); WEBPACK=$NPM_ROOT'/@deskproapps/dpat/node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && ${WEBPACK}",
     "release": "npm_bump",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,7 +32,6 @@
     "lib/"
   ],
   "devDependencies": {
-    "@deskproapps/dpat": "0.3.1",
     "lodash": "4.17.4",
     "react": "15.5.3",
     "react-dom": "15.5.3",
