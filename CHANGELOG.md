@@ -1,3 +1,8 @@
+## Upcoming
+
+* [FEATURE] show settings mention only if application has any settings
+* [MAINTENANCE] user interface tweaks
+
 ## v1.0.0-alpha - 2017-05-22
 
 * [CHANGE] change the way an app is initialized, which becomes mainly the responsibility of an application project

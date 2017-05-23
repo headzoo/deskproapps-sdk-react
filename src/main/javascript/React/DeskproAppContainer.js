@@ -47,13 +47,12 @@ class DeskproAppContainer extends React.Component {
 
   renderOptionsWhenCollapsed =() => {
     const { app } = this.props;
-
     const collapseListener = () => app.visibility === 'collapsed' ? app.expand() : app.collapse();
 
     return (
       <Menu.Menu position="right" >
         <Menu.Item name="collapse" active={false} fitted onClick={collapseListener} className={"app-option"}>
-          <Icon name="caret up" size="large"/>
+          <Icon name="caret down" size="large"/>
         </Menu.Item>
       </Menu.Menu>
     );
@@ -61,24 +60,30 @@ class DeskproAppContainer extends React.Component {
 
   renderOptionsWhenExpanded =() => {
     const { app } = this.props;
-
     const collapseListener = () => app.visibility === 'collapsed' ? app.expand() : app.collapse();
 
-    return (
-      <Menu.Menu position="right">
-        <Menu.Item name="refresh" active={false} fitted onClick={app.refresh} className={"app-option"}>
-          <Icon name="refresh" />
-        </Menu.Item>
+    const options = [
+      <Menu.Item name="refresh" active={false} fitted onClick={app.refresh} className={"app-option"}>
+        <Icon name="refresh" />
+      </Menu.Item>
+    ];
 
+    const hasSettings = app.settings.length > 0;
+    if (hasSettings) {
+      options.push(
         <Menu.Item name="settings" active={false} fitted onClick={app.ui.showSettings} className={"app-option"}>
           <Icon name="setting" />
         </Menu.Item>
+      );
+    }
 
-        <Menu.Item name="collapse" active={false} fitted onClick={collapseListener} className={"app-option big"}>
-          <Icon name="caret up" />
-        </Menu.Item>
-      </Menu.Menu>
+    options.push(
+      <Menu.Item name="collapse" active={false} fitted onClick={collapseListener} className={"app-option big"}>
+        <Icon name="caret up" />
+      </Menu.Item>
     );
+
+    return (<Menu.Menu position="right">{ options} </Menu.Menu>);
   };
 
   renderAppHeader = (name) => {
@@ -113,7 +118,11 @@ class DeskproAppContainer extends React.Component {
     const { app } = this.props;
 
     if ( app.ui.state === 'loading') {
-      return (<Loader active={true} inline="centered" />);
+      return (
+        <Segment attached="bottom" className={"app-body"}>
+          <Loader active={true} inline="centered" />
+        </Segment>
+        );
     }
 
     return null;
@@ -129,7 +138,6 @@ class DeskproAppContainer extends React.Component {
           { this.renderOptions() }
         </Menu>
         { this.renderAppLoader() }
-
         { this.renderAppContent(mainComponent, app, passThroughProps) }
       </Container>
     );
