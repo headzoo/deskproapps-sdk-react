@@ -1,6 +1,7 @@
 ## Upcoming
 
 * [FEATURE] show settings mention only if application has any settings
+* [FIX] select fields loosing selected state
 * [MAINTENANCE] user interface tweaks
 
 ## v1.0.0-alpha - 2017-05-22

@@ -11,16 +11,8 @@ class DeskproAppContainer extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.initState();
     this.registerListeners();
   }
-
-  initState = () => {
-    this.state = {
-      options: { visible: true }
-    };
-  };
 
   registerListeners = () =>
   {
@@ -106,26 +98,27 @@ class DeskproAppContainer extends React.Component {
     const contentStyle = ui.state === 'loading' || visibility === 'collapsed'  ? invisibleStyle : {};
 
     return (
-      <Segment attached="bottom" style={contentStyle} className={"app-body"}>
-        <div style={contentStyle}>
-          <Content dpapp={ app } { ...props } />
-        </div>
-      </Segment>
+      <div style={contentStyle} id="dp-app-container">
+        <Segment attached="bottom" className={"app-body"}>
+            <Content dpapp={ app } />
+        </Segment>
+      </div>
     );
   };
 
   renderAppLoader = () => {
+    const invisibleStyle = { visibility: 'hidden', display: 'none' };
+
     const { app } = this.props;
+    const contentStyle = app.ui.state === 'loading' ? {} : invisibleStyle;
 
-    if ( app.ui.state === 'loading') {
       return (
-        <Segment attached="bottom" className={"app-body"}>
-          <Loader active={true} inline="centered" />
-        </Segment>
-        );
-    }
-
-    return null;
+        <div style={contentStyle} id="dp-app-loader">
+          <Segment attached="bottom" className={"app-body"}>
+            <Loader active={true} inline="centered" />
+          </Segment>
+        </div>
+      );
   };
 
   render = () => {
