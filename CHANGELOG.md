@@ -1,4 +1,4 @@
-## Upcoming
+## v1.0.0-alpha.1 - 2017-05-24
 
 * [FEATURE] show settings mention only if application has any settings
 * [FIX] select fields loosing selected state
