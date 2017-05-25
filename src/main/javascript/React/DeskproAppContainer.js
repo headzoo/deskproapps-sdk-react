@@ -79,11 +79,21 @@ class DeskproAppContainer extends React.Component {
   };
 
   renderAppHeader = (name) => {
+
+    // <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="18" height="18" style={{ position: 'absolute', top: '-8px', right: '-8px' }}>
+    //   <g>
+    //     <circle cx="9" cy="9" r="9" fill="red"/>
+    //     <text y="12" transform="translate(9)" fontSize="+10px" fill="white" stroke="white">
+    //       <tspan x="0" textAnchor="middle">3</tspan>
+    //     </text>
+    //   </g>
+    // </svg>
+
     return (
       <Menu.Item className={"app-header"}>
         <Header size="tiny">
-          <div className={"ui icon deskpro-app-icon"}>
-            <Image src="../assets/icon.png" />
+          <div style={{ position: 'relative' }} className="ui icon deskpro-app-icon">
+            <img src="../assets/icon.png" style={{ width: '16px', height: '16px', border: 0}}/>
           </div>
           <Header.Content> {name.toUpperCase()} </Header.Content>
         </Header>

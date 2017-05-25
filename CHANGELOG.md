@@ -1,3 +1,9 @@
+## Upcoming
+
+* [FIX] Typing into text and textarea fields causes form to loose focus
+* [MAINTENANCE] prepare for badge notifications
+
+
 ## v1.0.0-alpha.1 - 2017-05-24
 
 * [FEATURE] show settings mention only if application has any settings

@@ -1,7 +1,9 @@
 import React from 'react';
 import merge from 'lodash/merge';
 
-import { DateField, BoolField, RadioField, SelectField, SubmitField, LongTextField, TextField, AutoFields } from 'uniforms-semantic';
+import { DateField, BoolField, RadioField, SelectField, SubmitField, AutoFields } from 'uniforms-semantic';
+import {  TextField } from './TextField';
+import { TextareaField } from './TextareaField';
 import FormBridge from '../ReactForms/FormBridge';
 
 import CustomAutoField from './CustomAutoField';
@@ -12,7 +14,7 @@ import ChangeEventAccumulator from './ChangeEventAccumulator';
 const bridgeField = (bridge, UniformsField) => (allprops) => {
   const props = bridge.getFieldProps(allprops);
   return (
-    <UniformsField {...props} />
+    <UniformsField {...props} updateOnSchemaChanges={false} />
   );
 };
 
@@ -144,7 +146,7 @@ class UniformsFormBridge extends FormBridge {
 
   getFormFieldsComponent = () => AutoFields;
 
-  getFormFieldsProps = ({ fields }) => ({ fields, autoField: CustomAutoField, className: "field" }); // TODO add classname instead of overwrite
+  getFormFieldsProps = ({ fields }) => ({ fields, autoField: CustomAutoField, className: "field", updateOnSchemaChanges: false }); // TODO add classname instead of overwrite
 
   getRadioFieldComponent = () => bridgeField(this, RadioField);
 
@@ -152,9 +154,9 @@ class UniformsFormBridge extends FormBridge {
 
   getSubmitFieldComponent = () => bridgeField(this, SubmitField);
 
-  getTextareaFieldComponent = () => bridgeField(this, LongTextField);
+  getTextareaFieldComponent = () => TextareaField;
 
-  getTextFieldComponent = () => bridgeField(this, TextField);
+  getTextFieldComponent = () => TextField;
 
   getCheckboxFieldComponent = () => bridgeField(this, BoolField);
 
