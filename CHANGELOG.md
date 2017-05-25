@@ -1,4 +1,4 @@
-## Upcoming
+## v1.0.0-alpha.2 - 2017-05-25
 
 * [FIX] Typing into text and textarea fields causes form to loose focus
 * [MAINTENANCE] prepare for badge notifications
