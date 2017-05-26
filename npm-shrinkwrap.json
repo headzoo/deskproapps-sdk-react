@@ -3,9 +3,9 @@
   "version": "1.0.0-alpha.2",
   "dependencies": {
     "@deskproapps/deskproapps-sdk-core": {
-      "version": "1.0.0-alpha.1",
-      "from": "@deskproapps/deskproapps-sdk-core@1.0.0-alpha.1",
-      "resolved": "https://registry.npmjs.org/@deskproapps/deskproapps-sdk-core/-/deskproapps-sdk-core-1.0.0-alpha.1.tgz"
+      "version": "1.0.0-alpha.2",
+      "from": "@deskproapps/deskproapps-sdk-core@1.0.0-alpha.2",
+      "resolved": "https://registry.npmjs.org/@deskproapps/deskproapps-sdk-core/-/deskproapps-sdk-core-1.0.0-alpha.2.tgz"
     },
     "align-text": {
       "version": "0.1.4",
@@ -72,6 +72,11 @@
       "version": "6.17.1",
       "from": "babylon@>=6.0.18 <7.0.0",
       "resolved": "https://registry.npmjs.org/babylon/-/babylon-6.17.1.tgz"
+    },
+    "batch-processor": {
+      "version": "1.0.0",
+      "from": "batch-processor@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/batch-processor/-/batch-processor-1.0.0.tgz"
     },
     "beaver-logger": {
       "version": "2.0.8",
@@ -140,6 +145,11 @@
       "from": "deep-extend@0.4.1",
       "resolved": "https://registry.npmjs.org/deep-extend/-/deep-extend-0.4.1.tgz"
     },
+    "element-resize-detector": {
+      "version": "1.1.12",
+      "from": "element-resize-detector@>=1.1.12 <2.0.0",
+      "resolved": "https://registry.npmjs.org/element-resize-detector/-/element-resize-detector-1.1.12.tgz"
+    },
     "encoding": {
       "version": "0.1.12",
       "from": "encoding@>=0.1.11 <0.2.0",
@@ -179,6 +189,11 @@
           "dev": true
         }
       }
+    },
+    "get-size": {
+      "version": "2.0.2",
+      "from": "get-size@>=2.0.2 <3.0.0",
+      "resolved": "https://registry.npmjs.org/get-size/-/get-size-2.0.2.tgz"
     },
     "globals": {
       "version": "9.17.0",
