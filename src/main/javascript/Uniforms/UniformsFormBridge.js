@@ -1,9 +1,11 @@
 import React from 'react';
 import merge from 'lodash/merge';
 
-import { DateField, BoolField, RadioField, SelectField, SubmitField, AutoFields } from 'uniforms-semantic';
+import { BoolField, RadioField, SelectField, SubmitField, AutoFields } from 'uniforms-semantic';
 import {  TextField } from './TextField';
 import { TextareaField } from './TextareaField';
+import { DateField } from './DateField';
+
 import FormBridge from '../ReactForms/FormBridge';
 
 import CustomAutoField from './CustomAutoField';

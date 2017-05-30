@@ -1,3 +1,8 @@
+## v1.0.0-alpha.4 - 2017-05-26
+
+* [FIX] date field showing time fields
+
+
 ## v1.0.0-alpha.3 - 2017-05-26
 
 * [MAINTENANCE] update dependencies
