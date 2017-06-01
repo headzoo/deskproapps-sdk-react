@@ -1,3 +1,6 @@
+## v1.0.0-alpha.5 - 2017-05-26
+* [FEATURE] allow custom objects to be passed as values for the select field
+
 ## v1.0.0-alpha.4 - 2017-05-26
 
 * [FIX] date field showing time fields
