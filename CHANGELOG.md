@@ -1,4 +1,4 @@
-## Upcoming
+## v1.0.0-alpha.5 - 2017-06-12
 
 * [MAINTENANCE] add new package mode that does not bundle any DeskPro sdk, drop peer dependencies
 * [MAINTENANCE] enable travis ci integration
