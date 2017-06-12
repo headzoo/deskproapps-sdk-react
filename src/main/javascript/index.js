@@ -22,4 +22,3 @@ export const Layout = {
 };
 
 export DeskproAppContainer from './React/DeskproAppContainer'
-export { createApp } from '@deskproapps/deskproapps-sdk-core';

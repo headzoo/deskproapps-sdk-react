@@ -4,10 +4,11 @@
   "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
   "main": "lib/main/javascript/index.js",
   "scripts": {
-    "make-lib": "NPM_ROOT=$(npm root -g); BABEL=$NPM_ROOT'/@deskproapps/dpat/node_modules/.bin/babel'; rm -rf lib/* && ${BABEL} src/main/javascript -d lib/main/javascript",
-    "make-dist": "NPM_ROOT=$(npm root -g); WEBPACK=$NPM_ROOT'/@deskproapps/dpat/node_modules/.bin/webpack --config src/webpack/webpack.config-dist.js'; rm -rf dist/* && ${WEBPACK}",
+    "make-clean": "rm -rf dist/*;  rm -rf lib/*",
+    "make-lib": "BABEL='./bin/babel-dpat.sh'; ${BABEL} src/main/javascript -d lib/main/javascript",
+    "make-dist": "WEBPACK='./bin/webpack-dpat.sh --config src/webpack/webpack.config-dist.js'; DPA_PACKAGE=${DPA_PACKAGE} ${WEBPACK}",
     "release": "npm_bump",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest src/test"
   },
   "repository": {
     "type": "git",
@@ -32,21 +33,31 @@
     "lib/"
   ],
   "devDependencies": {
-    "lodash": "4.17.4",
+    "babel-plugin-import-rename": "1.0.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-assign": "6.22.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.6",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "enzyme": "2.8.2",
+    "jest": "20.0.4",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-    "semantic-ui-react": "0.67.2"
+    "react-test-renderer": "15.5.4"
   },
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-core": "^1.0.0-alpha.2",
+    "@deskproapps/deskproapps-sdk-core": "1.0.0-alpha.5",
+    "lodash.isequal": "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz",
+    "lodash.merge": "4.6.0",
     "graphql": "^0.9.6",
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
-    "uniforms-semantic": "1.17.1"
-  },
-  "peerDependencies": {
-    "react": "15.x",
-    "react-dom": "15.x",
+    "uniforms-semantic": "1.17.1",
+    "react": "15.5.3",
+    "react-dom": "15.5.3",
     "semantic-ui-react": "0.67.2"
   }
 }

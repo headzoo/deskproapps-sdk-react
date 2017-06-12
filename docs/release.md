@@ -34,4 +34,4 @@ The arguments available to the prepare-release command are:
   
 The release step executes the following sequence of actions:
     
-* Run `npm run make-lib && npm run make-dist && npm publish --access public`  
+* Run `npm run make-clean && npm run make-lib && npm run make-dist && npm publish --access public`  

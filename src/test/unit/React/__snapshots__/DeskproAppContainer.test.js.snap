@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully render an application 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui borderless top attached app-menu menu"
+  >
+    <div
+      className="item app-header"
+      onClick={[Function]}
+    >
+      <div
+        className="ui tiny header"
+      >
+        <div
+          className="ui icon deskpro-app-icon"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <img
+            src="../assets/icon.png"
+            style={
+              Object {
+                "border": 0,
+                "height": "16px",
+                "width": "16px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="content"
+        >
+           
+          TEST APP
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="right menu"
+    >
+      <a
+        className="fitted item app-option"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="refresh icon"
+        />
+      </a>
+      <a
+        className="fitted item app-option big"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="caret up icon"
+        />
+      </a>
+       
+    </div>
+  </div>
+  <div
+    id="dp-app-loader"
+    style={
+      Object {
+        "display": "none",
+        "visibility": "hidden",
+      }
+    }
+  >
+    <div
+      className="ui bottom attached segment app-body"
+    >
+      <div
+        className="ui active centered inline loader"
+      />
+    </div>
+  </div>
+  <div
+    id="dp-app-container"
+    style={Object {}}
+  >
+    <div
+      className="ui bottom attached segment app-body"
+    >
+      <div>
+        Hello World
+      </div>
+    </div>
+  </div>
+</div>
+`;

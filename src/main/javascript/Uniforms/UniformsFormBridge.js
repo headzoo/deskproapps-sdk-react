@@ -1,5 +1,5 @@
 import React from 'react';
-import merge from 'lodash/merge';
+import merge from 'lodash.merge';
 
 import { BoolField, RadioField, SelectField, SubmitField, AutoFields } from 'uniforms-semantic';
 import {  TextField } from './TextField';

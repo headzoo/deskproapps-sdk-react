@@ -1,3 +1,8 @@
+## Upcoming
+
+* [MAINTENANCE] add new package mode that does not bundle any DeskPro sdk, drop peer dependencies
+* [MAINTENANCE] enable travis ci integration
+
 ## v1.0.0-alpha.4 - 2017-05-26
 
 * [FIX] date field showing time fields
