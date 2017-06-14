@@ -1,4 +1,4 @@
-## Upcoming
+## v1.0.0-alpha.6 - 2017-06-14
 * [FEATURE] display a badge count next to the application icon
 
 ## v1.0.0-alpha.5 - 2017-06-12
