@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Container, Header, Segment, Icon, Menu, Loader, Image } from 'semantic-ui-react/src';
-import { AppEvents, UIEvents } from '@deskproapps/deskproapps-sdk-core';
+
+import { AppEvents, UIEvents, UIConstants } from '@deskproapps/deskproapps-sdk-core';
 
 class DeskproAppContainer extends React.Component {
   static propTypes = {
@@ -18,10 +19,14 @@ class DeskproAppContainer extends React.Component {
   {
     const { app } = this.props;
 
-    app.on(AppEvents.EVENT_EXPAND, () => this.forceUpdate());
-    app.on(AppEvents.EVENT_COLLAPSE, () => this.forceUpdate());
-    app.on(UIEvents.EVENT_STATE_TRANSITION, (currentState, previousState) => this.forceUpdate());
-    app.on(UIEvents.EVENT_MENU_STATE_TRANSITION, (currentState, previousState) => this.forceUpdate());
+    const forceUpdateTrigger = () => this.forceUpdate();
+
+    app.on(AppEvents.EVENT_EXPAND, forceUpdateTrigger);
+    app.on(AppEvents.EVENT_COLLAPSE, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_STATE_TRANSITION, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_MENU_STATE_TRANSITION, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_BADGE_COUNTCHANGED, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_BADGE_VISIBILITYCHANGED, forceUpdateTrigger);
   };
 
   renderOptions = () => {
@@ -78,21 +83,33 @@ class DeskproAppContainer extends React.Component {
     return (<Menu.Menu position="right">{ options} </Menu.Menu>);
   };
 
-  renderAppHeader = (name) => {
+  renderAppBadge = app =>
+  {
+    const { badgeCount } = app.ui;
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="18" height="18">
+        <g>
+          <circle cx="9" cy="9" r="9" fill="red"/>
+          <text y="12" transform="translate(9)" fontSize="10px" fill="white" stroke="white">
+            <tspan x="0" textAnchor="middle">{badgeCount}</tspan>
+          </text>
+        </g>
+      </svg>
+    );
+  };
 
-    // <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="18" height="18" style={{ position: 'absolute', top: '-8px', right: '-8px' }}>
-    //   <g>
-    //     <circle cx="9" cy="9" r="9" fill="red"/>
-    //     <text y="12" transform="translate(9)" fontSize="+10px" fill="white" stroke="white">
-    //       <tspan x="0" textAnchor="middle">3</tspan>
-    //     </text>
-    //   </g>
-    // </svg>
+  renderAppHeader = (name, app) => {
 
     return (
       <Menu.Item className={"app-header"}>
         <Header size="tiny">
           <div style={{ position: 'relative' }} className="ui icon deskpro-app-icon">
+            {
+              app.ui.badge === UIConstants.VISIBILITY_VISIBLE &&
+              <div style={{ position: 'absolute', top: '-9px', right: '-9px' }}>
+                { this.renderAppBadge(app) }
+              </div>
+            }
             <img src="../assets/icon.png" style={{ width: '16px', height: '16px', border: 0}}/>
           </div>
           <Header.Content> {name.toUpperCase()} </Header.Content>
@@ -137,7 +154,7 @@ class DeskproAppContainer extends React.Component {
     return (
       <Container>
         <Menu borderless attached="top" className={"app-menu"}>
-          { this.renderAppHeader(name) }
+          { this.renderAppHeader(name, app) }
           { this.renderOptions() }
         </Menu>
         { this.renderAppLoader() }

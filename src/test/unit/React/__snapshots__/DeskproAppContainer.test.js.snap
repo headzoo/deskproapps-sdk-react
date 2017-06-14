@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`successfully render an application 1`] = `
+exports[`successfully render an application in initial state 1`] = `
 <div
   className="ui container"
 >
@@ -22,6 +22,143 @@ exports[`successfully render an application 1`] = `
             }
           }
         >
+          <img
+            src="../assets/icon.png"
+            style={
+              Object {
+                "border": 0,
+                "height": "16px",
+                "width": "16px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="content"
+        >
+           
+          TEST APP
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="right menu"
+    >
+      <a
+        className="fitted item app-option"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="refresh icon"
+        />
+      </a>
+      <a
+        className="fitted item app-option big"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="caret up icon"
+        />
+      </a>
+       
+    </div>
+  </div>
+  <div
+    id="dp-app-loader"
+    style={
+      Object {
+        "display": "none",
+        "visibility": "hidden",
+      }
+    }
+  >
+    <div
+      className="ui bottom attached segment app-body"
+    >
+      <div
+        className="ui active centered inline loader"
+      />
+    </div>
+  </div>
+  <div
+    id="dp-app-container"
+    style={Object {}}
+  >
+    <div
+      className="ui bottom attached segment app-body"
+    >
+      <div>
+        Hello World
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`successfully render an application with the badge count visible 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui borderless top attached app-menu menu"
+  >
+    <div
+      className="item app-header"
+      onClick={[Function]}
+    >
+      <div
+        className="ui tiny header"
+      >
+        <div
+          className="ui icon deskpro-app-icon"
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "position": "absolute",
+                "right": "-9px",
+                "top": "-9px",
+              }
+            }
+          >
+            <svg
+              height="18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <g>
+                <circle
+                  cx="9"
+                  cy="9"
+                  fill="red"
+                  r="9"
+                />
+                <text
+                  fill="white"
+                  fontSize="10px"
+                  stroke="white"
+                  transform="translate(9)"
+                  y="12"
+                >
+                  <tspan
+                    textAnchor="middle"
+                    x="0"
+                  >
+                    0
+                  </tspan>
+                </text>
+              </g>
+            </svg>
+          </div>
           <img
             src="../assets/icon.png"
             style={
