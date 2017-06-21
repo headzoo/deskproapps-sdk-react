@@ -1,4 +1,4 @@
-## Upcoming 
+## v1.0.0-alpha.7 - 2017-06-21 
 * [MAINTENANCE] update dependencies
 
 ## v1.0.0-alpha.6 - 2017-06-14
