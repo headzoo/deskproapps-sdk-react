@@ -12,20 +12,23 @@ class TestApp extends React.Component
 
 test('successfully render an application in initial state', done => {
 
-  const dpapp = createAppFromProps({
+  const contextProps = {
     // context
-    contextType: 'ticket',
-    contextEntityId: '1',
-    contextLocationId: 'ticket-sidebar',
-    contextTabId: 'tab-id',
+    type: 'ticket',
+    entityId: '1',
+    locationId: 'ticket-sidebar',
+    tabId: 'tab-id',
+    tabUrl: 'http://127.0.0.1'
+  };
 
-    // instance
-
+  const instanceProps = {
     appId: '1',
     appTitle: 'test',
     appPackageName: 'com.deskpro.test',
     instanceId: '1'
-  });
+  };
+
+  const dpapp = createAppFromProps({ contextProps, instanceProps });
 
   const component = renderer.create(
     <DeskproAppContainer app={dpapp} name="Test App" mainComponent={TestApp} />
@@ -39,20 +42,23 @@ test('successfully render an application in initial state', done => {
 
 test('successfully render an application with the badge count visible', done => {
 
-  const dpapp = createAppFromProps({
+  const contextProps = {
     // context
-    contextType: 'ticket',
-    contextEntityId: '1',
-    contextLocationId: 'ticket-sidebar',
-    contextTabId: 'tab-id',
+    type: 'ticket',
+    entityId: '1',
+    locationId: 'ticket-sidebar',
+    tabId: 'tab-id',
+    tabUrl: 'http://127.0.0.1'
+  };
 
-    // instance
-
+  const instanceProps = {
     appId: '1',
     appTitle: 'test',
     appPackageName: 'com.deskpro.test',
     instanceId: '1'
-  });
+  };
+
+  const dpapp = createAppFromProps({ contextProps, instanceProps });
 
   dpapp.ui.showBadgeCount();
 
