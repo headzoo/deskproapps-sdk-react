@@ -1,5 +1,7 @@
 import { SimpleSchema2Bridge as BaseSimpleSchema2Bridge } from 'uniforms';
 import SimpleSchema from 'simpl-schema';
+
+// add our own key
 SimpleSchema.extendOptions(['deskpro']);
 
 function filterDeskproProperties(props) {

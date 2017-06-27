@@ -1,3 +1,6 @@
+## Upcoming
+* [FEATURE] add possibility to group options in select fields
+
 ## v1.0.0-alpha.8 - 2017-06-23 
 * [MAINTENANCE] update dependencies
 
