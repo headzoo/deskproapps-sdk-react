@@ -1,6 +1,6 @@
 {
   "name": "@deskproapps/deskproapps-sdk-react",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "dependencies": {
     "@deskproapps/deskproapps-sdk-core": {
       "version": "1.0.0-alpha.9",
