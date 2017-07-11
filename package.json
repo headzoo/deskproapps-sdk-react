@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeskproApps/deskproapps-sdk-react.git"
+    "url": "git+https://github.com/Deskpro/deskproapps-sdk-react.git"
   },
   "keywords": [
     "deskpro",
@@ -23,9 +23,9 @@
   "author": "DeskPRO Ltd.",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/DeskproApps/deskproapps-sdk-react/issues"
+    "url": "https://github.com/Deskpro/deskproapps-sdk-react/issues"
   },
-  "homepage": "https://github.com/DeskproApps/deskproapps-sdk-react#readme",
+  "homepage": "https://github.com/Deskpro/deskproapps-sdk-react#readme",
   "files": [
     "LICENSE",
     "README.md",
@@ -49,15 +49,15 @@
     "react-test-renderer": "15.5.4"
   },
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-core": "1.0.0-alpha.9",
+    "@deskproapps/deskproapps-sdk-core": "1.0.0-alpha.11",
+    "graphql": "^0.9.6",
     "lodash.isequal": "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz",
     "lodash.merge": "4.6.0",
-    "graphql": "^0.9.6",
-    "simpl-schema": "0.2.3",
-    "uniforms": "1.17.1",
-    "uniforms-semantic": "1.17.1",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-    "semantic-ui-react": "0.67.2"
+    "semantic-ui-react": "0.67.2",
+    "simpl-schema": "0.2.3",
+    "uniforms": "1.17.1",
+    "uniforms-semantic": "1.17.1"
   }
 }
