@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Container, Header, Segment, Icon, Menu, Loader, Image } from 'semantic-ui-react/src';
 
-import { AppEvents, UIEvents, UIConstants } from '@deskproapps/deskproapps-sdk-core';
+import { UIEvents, UIConstants } from '@deskproapps/deskproapps-sdk-core';
 
 class DeskproAppContainer extends React.Component {
   static propTypes = {
@@ -21,30 +21,29 @@ class DeskproAppContainer extends React.Component {
 
     const forceUpdateTrigger = () => this.forceUpdate();
 
-    app.on(AppEvents.EVENT_EXPAND, forceUpdateTrigger);
-    app.on(AppEvents.EVENT_COLLAPSE, forceUpdateTrigger);
-    app.on(UIEvents.EVENT_STATE_TRANSITION, forceUpdateTrigger);
-    app.on(UIEvents.EVENT_MENU_STATE_TRANSITION, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_UI_DISPLAYCHANGED, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_UI_STATECHANGED, forceUpdateTrigger);
+    app.on(UIEvents.EVENT_MENU_VISIBILITYCHANGED, forceUpdateTrigger);
     app.on(UIEvents.EVENT_BADGE_COUNTCHANGED, forceUpdateTrigger);
     app.on(UIEvents.EVENT_BADGE_VISIBILITYCHANGED, forceUpdateTrigger);
   };
 
-  renderOptions = () => {
-    const { visibility, ui } = this.props.app;
+  renderMenu = () => {
+    const { ui } = this.props.app;
 
-    if (ui.menu === 'hidden') {
+    if (ui.menu === UIConstants.VISIBILITY_HIDDEN) {
       return ( <Menu.Menu position="right" /> );
     }
 
-    if (visibility === 'collapsed') {
-      return this.renderOptionsWhenCollapsed();
+    if (ui.isCollapsed()) {
+      return this.renderMenuWhenCollapsed();
     }
-    return this.renderOptionsWhenExpanded();
+    return this.renderMenuWhenExpanded();
   };
 
-  renderOptionsWhenCollapsed =() => {
-    const { app } = this.props;
-    const collapseListener = () => app.visibility === 'collapsed' ? app.expand() : app.collapse();
+  renderMenuWhenCollapsed =() => {
+    const { ui } = this.props.app;
+    const collapseListener = () => ui.isCollapsed() ? ui.expand() : ui.collapse();
 
     return (
       <Menu.Menu position="right" >
@@ -55,10 +54,11 @@ class DeskproAppContainer extends React.Component {
     );
   };
 
-  renderOptionsWhenExpanded =() => {
-    const { app } = this.props;
-    const collapseListener = () => app.visibility === 'collapsed' ? app.expand() : app.collapse();
+  renderMenuWhenExpanded =() => {
+    const { ui } = this.props.app;
+    const collapseListener = () => ui.isCollapsed() ? ui.expand() : ui.collapse();
 
+    const { app } = this.props;
     const options = [
       <Menu.Item name="refresh" active={false} fitted onClick={app.refresh} className={"app-option"}>
         <Icon name="refresh" />
@@ -68,7 +68,7 @@ class DeskproAppContainer extends React.Component {
     const hasSettings = app.settings.length > 0;
     if (hasSettings) {
       options.push(
-        <Menu.Item name="settings" active={false} fitted onClick={app.ui.showSettings} className={"app-option"}>
+        <Menu.Item name="settings" active={false} fitted onClick={ui.showSettings} className={"app-option"}>
           <Icon name="setting" />
         </Menu.Item>
       );
@@ -99,13 +99,14 @@ class DeskproAppContainer extends React.Component {
   };
 
   renderAppHeader = (name, app) => {
+    const { ui } = app;
 
     return (
       <Menu.Item className={"app-header"}>
         <Header size="tiny">
           <div style={{ position: 'relative' }} className="ui icon deskpro-app-icon">
             {
-              app.ui.badge === UIConstants.VISIBILITY_VISIBLE &&
+              ui.badge === UIConstants.VISIBILITY_VISIBLE &&
               <div style={{ position: 'absolute', top: '-9px', right: '-9px' }}>
                 { this.renderAppBadge(app) }
               </div>
@@ -121,8 +122,8 @@ class DeskproAppContainer extends React.Component {
   renderAppContent = (Content, app, props) => {
     const invisibleStyle = { visibility: 'hidden', display: 'none' };
 
-    const { visibility, ui } = app;
-    const contentStyle = ui.state === 'loading' || visibility === 'collapsed'  ? invisibleStyle : {};
+    const { ui } = app;
+    const contentStyle = ui.isLoading() || ui.isCollapsed()  ? invisibleStyle : {};
 
     return (
       <div style={contentStyle} id="dp-app-container">
@@ -136,8 +137,8 @@ class DeskproAppContainer extends React.Component {
   renderAppLoader = () => {
     const invisibleStyle = { visibility: 'hidden', display: 'none' };
 
-    const { app } = this.props;
-    const contentStyle = app.ui.state === 'loading' ? {} : invisibleStyle;
+    const { ui } = this.props.app;
+    const contentStyle = ui.isLoading() ? {} : invisibleStyle;
 
       return (
         <div style={contentStyle} id="dp-app-loader">
@@ -155,7 +156,7 @@ class DeskproAppContainer extends React.Component {
       <Container>
         <Menu borderless attached="top" className={"app-menu"}>
           { this.renderAppHeader(name, app) }
-          { this.renderOptions() }
+          { this.renderMenu() }
         </Menu>
         { this.renderAppLoader() }
         { this.renderAppContent(mainComponent, app, passThroughProps) }
