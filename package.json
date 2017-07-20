@@ -1,6 +1,6 @@
 {
   "name": "@deskproapps/deskproapps-sdk-react",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-beta.1",
   "description": "A react-based javascript SDK for building Deskpro Apps powered by the React library",
   "main": "lib/main/javascript/index.js",
   "scripts": {
