@@ -1,3 +1,6 @@
+## Upcoming
+* [MAINTENANCE] update dependencies
+
 ## v1.0.0-alpha.10 - 2017-07-11
 * [MAINTENANCE] update dependencies
 * [MAINTENANCE] update links after transferring the repository to the `Deskpro` organization
