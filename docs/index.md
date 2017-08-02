@@ -4,9 +4,16 @@ A react-based javascript SDK for building Deskpro Apps based on React.Js
 
 
 ## Contents
+- [Installation](#installation)
 - [Building](#building)
 - [Running tests](#running-tests)
 - [Publishing a release](release.md)
+    
+## Installation
+    
+To install, run:
+    
+    npm install    
     
 ## Building
 
