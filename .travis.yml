@@ -1,7 +1,14 @@
- language: node_js
- node_js:
-   - "6"
+language: node_js
+node_js:
+- '6'
 install:
-  - npm install
+  - npm install && npm install @deskproapps/dpat@0.4.12
 script:
-  - npm test
+  - npm test && npm run make-clean && npm run make-lib && npm run make-dist
+deploy:
+  provider: npm
+  api_key: $NPM_TOKEN
+  email: radu.helstern@gmail.com
+  skip_cleanup: true
+  on:
+    tags: true

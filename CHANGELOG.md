@@ -1,3 +1,6 @@
+## Upcoming
+* [MAINTENANCE] update dependencies and readme and enable travis deploys
+
 ## v1.0.0-beta.2 - 2017-07-20
 * [MAINTENANCE] update dependencies
 

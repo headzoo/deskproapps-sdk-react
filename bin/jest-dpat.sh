@@ -18,5 +18,5 @@ else
     NODE_PATH=${NODE_PATH}:${DPAT_ROOT}/node_modules
 fi
 
-BABEL="${DPAT_MODULES}/.bin/babel"
-NODE_PATH=${NODE_PATH} ${BABEL} "$@"
+JEST="${DPAT_MODULES}/.bin/jest"
+NODE_PATH=${NODE_PATH} ${JEST} $@

@@ -6,9 +6,9 @@ First, make sure the release tools are installed:
 
     npm install -g release-tools
 
-Publishing a release is a two step process, involving first a release step, followed by a publish step. The command for publishing a release is:
+Publishing a release is a two step process, involving first a create release step, followed by a publish step which is executed by [Travis CI](https://travis-ci.org/). To trigger the publish process run:
     
-    npm run release -- <args>... ; npm publish --access public
+    npm run release -- <args>... 
     
 ### Create release step
 
@@ -29,9 +29,4 @@ The arguments available to the prepare-release command are:
     --patch, -p          Bump the package to the next patch version. This is an alias for --bugfix.                                            
     --minor, -m          Bump the package to the next minor version.                                                                           
     --major, -M          Bump the package to the next major version.                                                                                 
-    
-### Publish step
-  
-The release step executes the following sequence of actions:
-    
-* Run `npm run make-clean && npm run make-lib && npm run make-dist && npm publish --access public`  
+      
