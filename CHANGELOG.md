@@ -1,4 +1,4 @@
-## Upcoming
+## v1.0.0-beta.4 - 2017-08-07
 * [MAINTENANCE] update dependencies
 
 ## v1.0.0-beta.3 - 2017-08-02
