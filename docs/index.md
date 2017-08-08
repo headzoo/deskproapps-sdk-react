@@ -1,6 +1,6 @@
-# deskproapps-sdk-react
+# deskproapps-sdk-react &middot; [![Build Status](https://travis-ci.org/deskpro/deskproapps-sdk-react.svg?branch=master)](https://travis-ci.org/deskpro/deskproapps-sdk-react)
 
-A react-based javascript SDK for building Deskpro Apps based on React.Js
+A javascript SDK for building Deskpro Apps based on React.Js
 
 
 ## Contents
@@ -8,6 +8,7 @@ A react-based javascript SDK for building Deskpro Apps based on React.Js
 - [Building](#building)
 - [Running tests](#running-tests)
 - [Publishing a release](release.md)
+- [API reference](https://deskpro.github.io/deskproapps-sdk-react/reference)
     
 ## Installation
     

@@ -48,5 +48,10 @@
     "simpl-schema": "0.2.3",
     "uniforms": "1.17.1",
     "uniforms-semantic": "1.17.1"
+  },
+  "optionalDependencies": {
+    "@deskproapps/dpat": "^0.4.12",
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.5.4"
   }
 }
