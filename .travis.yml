@@ -7,13 +7,13 @@ node_js:
 - '6'
 install:
   - npm install --no-optional
-  - npm install @deskproapps/dpat@0.4.12
+  - npm install @deskproapps/dpat@0.5.2
   - "! ./bin/travis.sh docs --should-publish || { npm install jsdoc@^3.5.4 && npm install docdash@^0.4.0; }"
 script:
   - npm test && npm run make-clean && npm run make-lib && npm run make-dist
   - "! ./bin/travis.sh docs --should-publish || npm run make-docs"
 after_script:
-  - "!./bin/travis.sh docs --should-publish || ./bin/travis.sh docs --publish"
+  - "! ./bin/travis.sh docs --should-publish || ./bin/travis.sh docs --publish"
 deploy:
   provider: npm
   api_key: $NPM_TOKEN

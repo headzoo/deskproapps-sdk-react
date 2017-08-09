@@ -7,6 +7,7 @@
     "make-clean": "rm -rf dist/*;  rm -rf lib/*",
     "make-lib": "BABEL='./bin/babel-dpat.sh'; ${BABEL} src/main/javascript -d lib/main/javascript",
     "make-dist": "WEBPACK='./bin/webpack-dpat.sh --config src/webpack/webpack.config-dist.js'; DPA_PACKAGE=${DPA_PACKAGE} ${WEBPACK}",
+    "make-docs": "DOCS='./docs/reference'; rm -rf ${DOCS}/* && jsdoc --configure ./.jsdoc --destination ${DOCS} --verbose",
     "release": "npm_bump",
     "test": "JEST='./bin/jest-dpat.sh'; ${JEST} src/test"
   },
@@ -50,7 +51,7 @@
     "uniforms-semantic": "1.17.1"
   },
   "optionalDependencies": {
-    "@deskproapps/dpat": "^0.4.12",
+    "@deskproapps/dpat": "^0.5.2",
     "docdash": "^0.4.0",
     "jsdoc": "^3.5.4"
   }
