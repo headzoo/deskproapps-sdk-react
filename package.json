@@ -37,8 +37,13 @@
     "enzyme": "2.8.2",
     "react-test-renderer": "15.5.4"
   },
+  "jest": {
+    "globals": {
+      "window": true
+    }
+  },
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-core": "1.0.0-beta.11",
+    "@deskproapps/deskproapps-sdk-core": "^1.0.0-beta.14",
     "graphql": "^0.9.6",
     "lodash.isequal": "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz",
     "lodash.merge": "4.6.0",
